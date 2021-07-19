@@ -1,12 +1,12 @@
 <?php
-include ("conetion.php");
+include ("Conetion.php");
 $IdUsuario = $_POST ['IdUsuario'];
 $Nombre = $_POST ['Nombre'];
 $ApPaterno = $_POST ['ApPaterno'];
 $ApMaterno = $_POST ['ApMaterno'];
 
-$query = "INSERT INTO Datos (IdUsu, Nombre, ApMataeno, ApPaterno) values('$IdUsuario','$Nombre','$ApMaterno','$ApPaterno')";
-$res = sqlsrv_prepare($con,$query);
+$query ="INSERT INTO Datos (IdUsu, Nombre, ApMataeno, ApPaterno) values('$IdUsuario','$Nombre','$ApMaterno','$ApPaterno')";
+$res = sqlsrv_prepare($conn,$query);
 
 if(sqlsrv_execute($res)){
     echo 'Datos insertados correctamente';
@@ -15,4 +15,5 @@ if(sqlsrv_execute($res)){
 }
 
 ?>
+
 
